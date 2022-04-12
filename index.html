@@ -1,7 +1,81 @@
-<html>
-	<head>
-	</head>
-	<body>
-		<p>PAGE</p>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+	<title>CS184 Final Project Proposal</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<body>
+<div class="container">
+<br/>
+
+<h1 align="middle">3D Explosion Simulation Project Proposal</h1>
+<br>
+	
+	<p>In this project, we will create 3D simulations of explosions. Explosions will start from a central point and create a pressure wave, heat wave, and a vapor cloud that radiate outwards, colored by light emitted by the heated material. Our simulation will be tested in multiple environments.</p>
+
+	<p>Team members: Eric Barrett, Angela Liu, Adam Rashid, Jenny Wang</p>
+
+	<h2 align="middle">Problem Description</h2>
+	    <p>
+	    	For this project we are trying to accurately animate explosion from the initial combustion to the motion of the lingering vapor cloud. This simulation can be used for game animation, movie and tv cgi, and even training simulations. The challenges will be in the vapor cloud simulation especially with how this will interact with different objects for example, an explosion around a corner or out a window. The general idea for this explosion will be to treat the vapor cloud as an incompressible fluid model to account for the motion of air and hot gases.
+	    </p>
+    <br>
+
+    <h2 align="middle">Goals and Deliverables</h2>
+	    <p>
+	    	TODO
+	    </p>
+    <br>
+
+    <h2 align="middle">Schedule</h2>
+	    <table class="table">
+		  <tbody>
+		    <tr>
+		        <td> Week 1 </td>
+			  	<td> <p>Flush out proj goals and create a working environment with some particles in a ball (beginning of explosion).</p> </td>
+		    </tr>
+		    <tr>
+		        <td> Week 2 </td>
+			    <td> <p>Create simulation of particles acting on outward/upward explosion force.</p> </td>
+		    </tr>
+		    <tr>
+		        <td> Week 3 </td>
+			    <td> <p>Add heat representation by incorporating direct light mixed with the gas particles that dissipates over time with heat cooling equations.</p> </td>
+		    </tr>
+		    <tr>
+		        <td> Week 4 </td>
+			    <td> <p>Implement stretch goals / finalize project and prersentation</p> </td>
+		    </tr>
+		  </tbody>
+		</table>		
+    <br>
+
+	<h2 align="middle">Resources</h2>
+	    <p>
+	    	Code based on clothsim. Simulation running on personal computers
+	    </p>
+	    	<p>Paper #1: <a href ="https://www.cs.uic.edu/~i376/feldman.pdf">Animating Suspended Particle Explosions</a></p>
+	    <p>
+	    	<p>Paper #2: <a href ="https://cgl.ethz.ch/Downloads/Seminar_Arbeiten/2002_03/yngveSiggraph2000Explosions.pdf">Animating Explosions</a></p>
+	    </p>
+	    <p>
+	    	<p>Implementation details: <a href ="http://donkilu.github.io/Explosion/">Particle Explosion</a></p>
+	    </p>
+    <br>    
+
+	<a href ="https://cal-cs184-student.github.io/sp22-project-webpages-AdamRashid96/proj4/index.html">https://cal-cs184-student.github.io/sp22-project-webpages-AdamRashid96/proj4/index.html</a>
+</div>
+
+</body>
 </html>
+
+
+
+
