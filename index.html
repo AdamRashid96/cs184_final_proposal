@@ -24,7 +24,7 @@
 
 	<h2 align="middle">Problem Description</h2>
 	    <p>
-	    	For this project we are trying to accurately animate explosion from the initial combustion to the motion of the lingering vapor cloud. This simulation can be used for game animation, movie and tv cgi, and even training simulations. The challenges will be in the vapor cloud simulation especially with how this will interact with different objects for example, an explosion around a corner or out a window. The general idea for this explosion will be to treat the vapor cloud as an incompressible fluid model to account for the motion of air and hot gases.
+	    	For this project we are trying to accurately animate explosion from the initial combustion to the motion of the lingering vapor cloud. This simulation can be used for game animation, movie and TV CGI, and even training simulations. The challenges will be in the vapor cloud simulation especially with how this will interact with different objects for example, an explosion around a corner or out a window. The general idea for this explosion will be to treat the vapor cloud as an incompressible fluid model to account for the motion of air and hot gases.
 	    </p>
     <br>
 
@@ -33,7 +33,7 @@
 	    	<b>Goals:</b>
 	    </p>
 		<ul>
-			<li>(1) Create a realistic simulation of particle movement that follows the force equations of the explosion.
+			<li>(1a) Create a realistic simulation of particle movement that follows the force equations of the explosion.
 				<ul>
 					<li>Create the gas model by representing particles as a gas fluid that satisfies the following equation: <br />
 						<img src="eqs/gas_model.png" alt="Gas model equation" width="300"> <br />
@@ -43,7 +43,7 @@
 					<li>The heat </li>
 				</ul>
 			</li>
-			<li>(1) Add coloring to explosion particles that reflects the heat of the explosion
+			<li>(1b) Add coloring to explosion particles that reflects the heat of the explosion
 				<ul>
 					<li>Due to the heat of the explosion, gas particles will initially radiate a bright orange/yellow color
 					that reflects the heat intensity at that position in a particular moment in time. This radiance should
@@ -65,7 +65,7 @@
 				particles (ex. explosion in a box with a small hole, movement of explosive particles after hitting a wall/corner, etc.)</li>
 			</ul>
 		</ul>
-	The first two goals (marked (1)) represent the basic necessary components of the project as a minimum viable product.
+	The first two goals (marked (1ab)) represent the basic necessary components of the project as a minimum viable product.
 	By modeling the movement and light of the explosive particles, we will be able to render a simulation of the initial explosive moment
 	of gas and dust particles.
 	After implementing these two parts, we hope to realistically extend the explosion by implementing the smoke/vapor cloud that
