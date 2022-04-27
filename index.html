@@ -1,151 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-	<title>CS184 Final Project Proposal</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-</head>
-
-<body>
-<div class="container">
-<br/>
-
-<h1 align="middle">3D Explosion Simulation Project Proposal</h1>
-<br>
-
-	<b><p>Team members: Eric Barrett, Angela Liu, Adam Rashid, Jenny Wang</p></b>
-	
-	<p>In this project, we will create 3D simulations of explosions. Explosions will start from a central point and create a pressure wave, heat wave, and a vapor cloud that radiate outwards, colored by light emitted by the heated material. Our simulation will be tested in multiple environments.</p>
-
-	<h2 align="middle">Problem Description</h2>
-	    <p>
-	    	For this project we are trying to accurately animate explosion from the initial combustion to the motion of the lingering vapor cloud. This simulation can be used for game animation, movie and TV CGI, and even training simulations. The challenges will be in the vapor cloud simulation especially with how this will interact with different objects for example, an explosion around a corner or out a window. The general idea for this explosion will be to treat the vapor cloud as an incompressible fluid model to account for the motion of air and hot gases.
-	    </p>
-    <br>
-
-    <h2 align="middle">Goals and Deliverables</h2>
-	    <p>
-	    	<b>Goals:</b>
-	    </p>
-		<ul>
-			<li>(1a) Create a realistic simulation of particle movement that follows the force equations of the explosion.
-				<ul>
-					<li>Create the gas model by representing particles as a gas fluid that satisfies the following equation: <br />
-						<img src="eqs/gas_model.png" alt="Gas model equation" width="300"> <br />
-						where u_dot is the change in fluid velocity over time, u is the fluid velocity, p is the gas/particle pressure,
-						rho is the gas/particle density, and f is any external force (ex. gravity, explosion force).
-					</li>
-					<li>The heat </li>
-				</ul>
-			</li>
-			<li>(1b) Add coloring to explosion particles that reflects the heat of the explosion
-				<ul>
-					<li>Due to the heat of the explosion, gas particles will initially radiate a bright orange/yellow color
-					that reflects the heat intensity at that position in a particular moment in time. This radiance should
-					decrease in intensity and color as the heat subsides and dissipates into the air. </li>
-					<li>The heat evolution over time will follow the fluid temperature equation and will be directly
-					used to compute the radiant intensity caused by particle heat generation.
-						<img src="eqs/temp_evol.png" alt="Temperature evolution equation" width="600"> <br />
-					</li>
-				</ul>
-
-			</li> (2) Add simulation of smoke/vapor following the explosion.
-			<ul>
-				<li> This will mostly consist of modeling the aerodynamics of moving smoke/dust particles circling in the air.</li>
-			</ul>
-			<li>(3) Modify the environment to create explosions that interact in different spaces / with different objects (ex. Air, box, corner, etc.)</li>
-			<ul>
-				<li>One idea is to consider how the explosion would react in different mediums: in space, underwater, in a vacuum</li>
-				<li>Having the explosion interact with neighboring walls/objects that serve to contain the explosive distribution of
-				particles (ex. explosion in a box with a small hole, movement of explosive particles after hitting a wall/corner, etc.)</li>
-			</ul>
-		</ul>
-	The first two goals (marked (1ab)) represent the basic necessary components of the project as a minimum viable product.
-	By modeling the movement and light of the explosive particles, we will be able to render a simulation of the initial explosive moment
-	of gas and dust particles.
-	After implementing these two parts, we hope to realistically extend the explosion by implementing the smoke/vapor cloud that
-	lingers following the initial explosive forces. Finally, if time allows, we would be interested in modeling the behavior of
-	both the explosion and the lingering cloud in different environments or mediums to see how they would react under different
-	forces/pressures or with different objects like walls, windows, or corners.
-	<br />
-	<br />
-	<p>
-		<b>Demo:</b> Our demo will consist of a short video showing the movement of particles and light in the course of an explosion (approx. 2-3 seconds real time with 60 fps).
-		We will then replay the scenario at a slower simulation speed to walk through the physical, fluid, and thermodynamic intricacies
-		involved in different steps of the rendering algorithm.
-
-	</p>
-
-	<p>
-		<b>Performance/Analysis:</b> We will quantify our project performance by the realism of the rendered simulation.
-		Using reference simulations seen in the linked sources below, we hope to expand upon them and create more
-		realistic renderings of the force and color of the explosions, along with 3D shading of the explosion particles
-		and resulting vapor cloud.
-	</p>
-
-    <h2 align="middle">Schedule</h2>
-	    <table class="table">
-		  <tbody>
-		    <tr>
-		        <td> Week 1 </td>
-			  	<td> 
-			  		<ul>
-			  			<li>Flush out project goals</li>
-
-			  			<li>Create a working environment with some particles in a ball (beginning of explosion).</li>
-			  		</ul>
-			  	</td>
-		    </tr>
-		    <tr>
-		        <td> Week 2 (Milestone) </td>
-			    <td> 
-			    	<ul>
-			  			<li>Create simulation of particles acting on outward/upward explosion force.</li>
-
-			  			<li>Add heat representation by incorporating direct light mixed with the gas particles. The light should dissipate over time by following the thermodynamic equations</li>
-			  		</ul>
-			    </td>
-		    </tr>
-		    <tr>
-		        <td> Week 3 </td>
-			    <td> 
-			    	<ul>
-			  			<li>Simulate vapor cloud physics over time</li>
-
-			  			<li>Implement the refraction cause by the explosion shockwave</li>
-			  		</ul>
-			    </td>
-		    </tr>
-		    <tr>
-		        <td> Week 4 </td>
-			    <td> <ul><li>If all went well work on interactions with other objects / finalize project and presentation</li> </td></ul>
-		    </tr>
-		  </tbody>
-		</table>		
-    <br>
-
-	<h2 align="middle">Resources</h2>
-	    <p>
-	    	Code based on clothsim. Simulation running on personal computers
-	    </p>
-	    	<p>Paper #1: <a href ="https://www.cs.uic.edu/~i376/feldman.pdf">Animating Suspended Particle Explosions</a></p>
-	    <p>
-	    	<p>Paper #2: <a href ="https://cgl.ethz.ch/Downloads/Seminar_Arbeiten/2002_03/yngveSiggraph2000Explosions.pdf">Animating Explosions</a></p>
-	    </p>
-	    <p>
-	    	<p>Implementation details: <a href ="http://donkilu.github.io/Explosion/">Particle Explosion</a></p>
-	    </p>
-    <br>    
-</div>
-
-</body>
+<html>
+	<head>
+	</head>
+	<body>
+		<h3>CS184/284A Project Webpages</h3>
+		<br><br>
+		<a href="/proposal/index.html">Proposal</a>
+		<br><br>
+		<a href="/milestone/index.html">Milestone</a>
+	</body>
+	<script>
+		var links = document.body.getElementsByTagName("a")
+		var a = window.location.href.indexOf(".io")
+		var repo_name = window.location.href.substring(a+3)
+		for(var i = 0; i < links.length; i++){
+			var link = links[i]
+			var actual_name = link.href.substring(link.href.indexOf(".io")+4)
+			link.href = repo_name + actual_name
+		}
+	</script>
 </html>
-
-
-
-
