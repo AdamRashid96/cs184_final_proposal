@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+	<title>CS184 Final Project Proposal</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<body>
+<div class="container">
+<br/>
+
+<h1 align="middle">3D Explosion Simulation Project Milestone</h1>
+<br>
+
+	<b><p>Team members: Eric Barrett, Angela Liu, Adam Rashid, Jenny Wang</p></b>
+
+	<br>
+
+	<h2 align="middle">What We've Accomplished:</h2>
+	    <p>
+	    	For the checkpoint, we have taken the cloth simulator code and have edited it so that we are now able to render empty scenes without a cloth object. We have created an initial simulation of particles in an explosion. We generated 1,000 particles from a random uniform 3D sphere distribution to create the initial starting location of each particle. From there, we added a random outward velocity to simulate the beginning speeds of each particle in the first moments of the explosion. The simulation appears quite convincing in terms of particle and initial velocity; however, it is still clearly lacking fluid and thermodynamic force equations to create a realistic gas effect. The particles experience no drag and never burn out and there is currently no collision between particles.
+	    </p>
+    <br>
+
+    <h2 align="middle">Preliminary results:</h2>
+    	<br>
+    	<div align="middle">
+    	<p>Demo Video:</p>
+    	<iframe width="500" height="300" src="https://www.youtube.com/embed/z7drdiZXFd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	<br>
+    	<a href="https://docs.google.com/presentation/d/1pyNyoAsfrM9lp98Weq4qmk61Fc6WiYbc5DUn-w8t6MM/edit?usp=sharing">Progress Slides</a>
+    	</div>
+    <br>
+
+    <h2 align="middle">Reflection on Progress:</h2>
+	    <p>
+	    	A major concern of ours is the performance of our particle simulation. Initial tests with just 1,000 particles produced a very choppy simulation. We reduced the resolution of the sphere mesh used to render the particles, which fixed the issue for now. However, if we want to increase the number of simulated particles, we will likely need to further optimize the particle rendering. Ideas we’re looking into are rendering the particles as a “billboard” quad that always faces the camera, and using instanced rendering. Increasing the number of particles could allow for a more well-blended effect, as the particles right now seem disjoint from one another and appear more like big chunks than fine particles of dust or soot. 
+	    </p>
+    <br>
+
+    <h2 align="middle">Work plan:</h2>
+	    <p>
+	    	We are currently on track with our work plan and believe that we are still set to complete all the previously listed items in our proposal. Our next step will be to simulate the temperature of the particles, add the gas simulation, and add in the interactions between the gas and particles. This will allow the particles to contract inward during the explosion to create the realistic gaseous cloud shape that occurs in an explosion. Immediately after, we will add in the color from thermodynamic heat equations to create the minimum viable product of our explosion. We anticipate that this should take about a week and we can spend the remaining days adding on extra effects like smoke simulation or interaction with other objects in the scene.
+
+	    </p>
+    <br>
+  
+</div>
+
+</body>
+</html>
+
+
+
+
